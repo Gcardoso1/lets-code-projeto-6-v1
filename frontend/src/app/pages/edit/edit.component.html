@@ -1,0 +1,67 @@
+<!--<div class="example-container">
+    <div class="form-container">
+      <form [formGroup]="loginForm" (submit)="submit()">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> E-mail
+          </mat-label>
+          <input matInput formControlName="email" required>
+          <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
+            <span *ngIf="loginForm.controls.email.errors.required">This field is mandatory.</span>
+            <span *ngIf="loginForm.controls.email.errors.pattern">This field is invalid.</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Password
+          </mat-label>
+          <input matInput formControlName="password" type="password">
+          <mat-error *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
+            <span *ngIf="loginForm.controls.password.errors.required">This field is mandatory.</span>
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Log In</button>
+      </form>
+    </div>
+</div>-->
+
+<div class="example-container">
+    <mat-card>
+        <h2 >Editar Task</h2>
+        <form class="form-content" *ngIf="loginForm" [formGroup]="loginForm">
+        <mat-form-field appearance="outline" class="form-element">
+            <mat-label>Titulo</mat-label>
+            <input matInput placeholder="Digite o titulo" formControlName="titulo" [(ngModel)]="titulo">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-element">
+            <mat-label>Descrição</mat-label>
+            <input matInput placeholder="Digite a descrição" formControlName="descricao" [(ngModel)]="descricao">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-element">
+            <mat-label>Data Entrega</mat-label>
+            <input matInput type="date" placeholder="Digite a data de entrega" 
+            formControlName="data_entrega" [(ngModel)]="data_entrega">
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" class="form-element">
+            <!--<mat-label>Prioridade</mat-label>
+            <input type="password" matInput placeholder="Digite sua senha" formControlName="prioridade">-->
+            <!--<mat-radio-group aria-label="Selecione uma opção" formControlName="prioridade">
+                <mat-radio-button value="Low">Low</mat-radio-button>
+                <mat-radio-button value="Medium">Medium</mat-radio-button>
+                <mat-radio-button value="High">High</mat-radio-button>
+            </mat-radio-group>-->
+                <mat-label>Selecione a prioridade</mat-label>
+                <mat-select formControlName="prioridade" [value]="prioridade">
+                  <mat-option value="Low">Low</mat-option>
+                  <mat-option value="Medium">Medium</mat-option>
+                  <mat-option value="High">High</mat-option>
+                </mat-select>
+        </mat-form-field>
+    
+        <!--<input type="submit">-->
+        <button (click)="onSubmit()" mat-button color="primary">Atualizar</button>
+        <button (click)="voltar()" mat-button color="primary">Voltar</button>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,27 @@
+<!-- <mat-expansion-panel [ngStyle]="{backgroundColor: getColor()}" *ngIf="task"> -->
+<!-- <mat-expansion-panel [ngClass]="getClass()" *ngIf="task"> -->
+<!-- <mat-expansion-panel [class]="task.priority.toLowerCase()" *ngIf="task"> -->
+<div *ngIf="task" class="item-container">
+
+  
+  <mat-checkbox #checkboxInput [checked]="task.done" (change)="markAsDone($event, task.id_task)"></mat-checkbox>
+  <mat-expansion-panel [ngClass]="{ 'bg-red': task.priority === 'High' }" style="flex: 1; margin-left: 10px;">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ task.title }}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ task.description }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <ul>
+      <li>Data de Entrega: {{ task.dueDate }}</li>
+      <li>Prioridade: {{ task.priority }}</li>
+      <li>Feita: {{ task.done? 'Sim' : 'Não' }}</li>
+      <button (click)="editarTask( task.id_task)" mat-raised-button color="primary">Editar</button>
+      <button (click)="deletarTask(task.id_task)" mat-raised-button color="warn">Deletar</button>
+    </ul>
+    <br>
+    <ng-content></ng-content>
+  </mat-expansion-panel>
+</div>

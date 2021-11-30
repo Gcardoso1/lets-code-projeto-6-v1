@@ -1,0 +1,14 @@
+<mat-toolbar *ngIf="renderizar" color="primary">
+  <span class="mouse-pointer" routerLink="">Projeto To-Do List</span>
+  <span class="spacer"></span>
+
+  <!-- <button routerLink="" routerLinkActive="white-border" mat-raised-button color="primary">Tasks List</button> -->
+  <button *ngIf="view_task" routerLink="" routerLinkActive="white-border" mat-raised-button color="accent">Task List</button>
+  <button *ngIf="create_task" routerLink="task" routerLinkActive="white-border" mat-raised-button >Create Task</button>
+  
+  <button mat-icon-button class="example-icon favorite-icon" 
+          aria-label="Example icon-button with heart icon"
+          (click)="logoutUser()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>

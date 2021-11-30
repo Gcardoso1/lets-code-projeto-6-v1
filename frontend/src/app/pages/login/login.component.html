@@ -1,0 +1,37 @@
+<!--<mat-card>
+  <form class="form-content" *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input matInput placeholder="Digite seu e-mail" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput placeholder="Digite sua senha" formControlName="password">
+    </mat-form-field>
+
+    <input type="submit">
+    <button (click)="onSubmit()" mat-button color="primary">Submit</button>
+  </form>
+
+</mat-card>-->
+
+<div class="example-container">
+  <br><br>
+  <mat-card>
+      <form class="form-content" *ngIf="loginForm" [formGroup]="loginForm">
+      <mat-form-field appearance="outline" class="form-element">
+          <mat-label>Login</mat-label>
+          <input matInput placeholder="Digite o login" formControlName="login">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-element">
+          <mat-label>Senha</mat-label>
+          <input matInput type="password" placeholder="Digite a senha" formControlName="password">
+      </mat-form-field>
+  
+      <button (click)="onSubmit()" mat-button color="primary">Login</button>
+      <button (click)="registrar()" mat-button color="primary">Registrar</button>
+      </form>
+  </mat-card>
+</div>

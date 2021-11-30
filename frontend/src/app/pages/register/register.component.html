@@ -1,0 +1,23 @@
+<div class="example-container">
+    <br><br>
+    <mat-card>
+        <form class="form-content" *ngIf="registerForm" [formGroup]="registerForm">
+        <mat-form-field appearance="outline" class="form-element">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Digite o login" formControlName="nome">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-element">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Digite o email" formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-element">
+            <mat-label>Senha</mat-label>
+            <input matInput type="password" placeholder="Digite a senha" formControlName="senha">
+        </mat-form-field>
+    
+        <button (click)="onSubmit()" mat-button color="primary">Registrar</button>
+        </form>
+    </mat-card>
+</div>

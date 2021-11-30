@@ -1,0 +1,23 @@
+.example-container{
+    /*text-align: center;
+    max-width: 400px;
+    display:inline-block;*/
+    margin: 0 auto;
+    width: 40%;
+    vertical-align: middle;    
+}
+
+.form-container{
+    width: 400 px; 
+    margin: 0 px auto; 
+    margin-top: 200 px;    
+}
+
+.form-field{
+    display: block
+}
+
+.form-element {
+    padding: 5px 0px 25px 2px;
+    width: 100%;
+  }
